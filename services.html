@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo">PortfolioPS</div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="calculator">
+    <h1>Portfolio Calculator</h1>
+    <p>Calculate future portfolio value using compound growth based on time and expected return.</p>
+
+    <input type="number" id="p" placeholder="Initial Investment">
+    <input type="number" id="r" placeholder="Annual Return (%)">
+    <input type="number" id="t" placeholder="Years">
+
+    <button onclick="calc()">Calculate</button>
+    <h2 id="output"></h2>
+</section>
+
+<script>
+function calc() {
+    let p = document.getElementById("p").value;
+    let r = document.getElementById("r").value / 100;
+    let t = document.getElementById("t").value;
+    let fv = p * Math.pow(1 + r, t);
+    document.getElementById("output").innerHTML = "Projected Value: ₹" + fv.toFixed(2);
+}
+</script>
+
+<footer>
+    <div class="container footer-container">
+        <p>&copy; 2025 Portfolio Projection System. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
